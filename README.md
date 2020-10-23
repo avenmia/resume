@@ -1,0 +1,1 @@
+The goal of this project is to create an azure function that can ouptut my resume to various data formats (word, latex, pdf, json).
