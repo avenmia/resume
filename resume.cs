@@ -7,6 +7,7 @@ using Microsoft.Azure.WebJobs.Extensions.Http;
 using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.Logging;
 using Newtonsoft.Json;
+using Newtonsoft.Json.Linq;
 
 namespace resume
 {
@@ -28,8 +29,11 @@ namespace resume
             string responseMessage = string.IsNullOrEmpty(name)
                 ? "This HTTP triggered function executed successfully. Pass a name in the query string or in the request body for a personalized response."
                 : $"Hello, {name}. This HTTP triggered function executed successfully.";
+            
+            JObject resumeObject = JObject.Parse(File.ReadAllText("./resumeData.json"));
+            Console.WriteLine(resumeObject);
 
-            return new OkObjectResult(responseMessage);
+            return new OkObjectResult(resumeObject);
         }
     }
 }
