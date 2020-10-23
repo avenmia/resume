@@ -1,0 +1,18 @@
+{
+  "Skills": ["C#", "TypeScript", "JavaScript", "Python"],
+  "Technologies": ["Vue.js", "React.js", "Node.js", "ASP.NET Core", "CosmosDB", "MSSQL Server"],
+  "WorkExperience": [
+    {
+      "title": "Software Engineer",
+      "employer": "Pangaea Information Technology",
+      "startDate": "01-2019",
+      "endDate": "Currently Employed"
+    },
+    {
+      "title": "Research Assistant",
+      "employer": "University of Illinois at Chicago",
+      "startDate": "06-2018",
+      "endDate": "12-2019"
+    }
+  ]
+}

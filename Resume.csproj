@@ -14,5 +14,9 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       <CopyToPublishDirectory>Never</CopyToPublishDirectory>
     </None>
+    <ContentWithTargetPath Include="./assets/resumeData.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <TargetPath>resumeData.json</TargetPath>
+    </ContentWithTargetPath>
   </ItemGroup>
 </Project>
