@@ -1,26 +1,17 @@
 using System;
 using System.IO;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Mvc;
 using Microsoft.Azure.WebJobs;
-using Microsoft.Azure.WebJobs.Extensions.Http;
-using Microsoft.AspNetCore.Http;
+using Microsoft.Azure.WebJobs.Host;
 using Microsoft.Extensions.Logging;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Linq;
 
 namespace resume
 {
-    public static class resume
+    public static class Resume
     {
-        [FunctionName("resume")]
-        public static async Task<IActionResult> Run(
-            [HttpTrigger(AuthorizationLevel.Function, "get", "post", Route = null)] HttpRequest req,
-            ILogger log)
+        [FunctionName("Resume")]
+        public static void Run([BlobTrigger("mikesresume/{name}", Connection = "AzureWebJobsStorage")]Stream myBlob, string name, ILogger log)
         {
-            JObject resumeObject = JObject.Parse(File.ReadAllText("./resumeData.json"));
-
-            return new OkObjectResult(resumeObject);
+            log.LogInformation($"C# Blob trigger function Processed blob\n Name: {name} \n Size: {myBlob.Length} Bytes");
         }
     }
 }
