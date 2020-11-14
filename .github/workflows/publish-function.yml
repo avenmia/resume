@@ -28,3 +28,4 @@ jobs:
           app-name: resumeCache
           # Path to package or folder. *.zip or a folder to deploy
           package: .
+          publish-profile: ${{ secrets.AZURE_FUNCTIONAPP_PUBLISH_PROFILE }}
